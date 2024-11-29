@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>OneLoyalty Tracking SDK Example</title>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <h1>OneLoyalty Tracking SDK Example</h1>
+        <button id="trackButton">Click me to track event</button>
+        <script src="oneloyalty-tracking-web-sdk-1.0.0.js"></script>
+        <script>
+            $(document).ready(function () {
+                OneLoyaltyTrackingWebSDK.init({
+                    appName: 'Game vip pro',
+                    appVersion: '2.3.1',
+                    baseUrl: 'https://oneloyalty-tracking-data-api.dev.terasvc.com',
+                    deviceId: 'user-devide-id',
+                    debug: true
+                })
+
+                $('#trackButton').on('click', function () {
+                    OneLoyaltyTrackingWebSDK.trackEvent('button_click', { button_id: 'trackButton' })
+                })
+            })
+        </script>
+    </body>
+</html>
