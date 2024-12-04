@@ -45,10 +45,11 @@ Before using the SDK, initialize it with your application-specific configuration
 
 ```javascript
 OneLoyaltyTrackingWebSDK.init({
-  appName: "Game Basketball",
-  appVersion: "2.3.1",
-  baseUrl: "https://${YOUR_TRACKING_API}",
-  deviceId: "27bf3752212cf819",
+  appName: "YOUR_APP_NAME",
+  appVersion: "YOUR_APP_VERSION",
+  trackingUrl: "https://oneloyalty-tracking-data-api.dev.terasvc.com",
+  loyaltyUrl: "https://loyalty-service-api.dev.terasvc.com",
+  token: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.xxx",
 });
 ```
 
@@ -81,24 +82,24 @@ OneLoyaltyTrackingWebSDK.init(config: InitConfig): void
 
 #### Parameters
 
-| Parameter    | Type      | Description                                 | Required |
-| ------------ | --------- | ------------------------------------------- | -------- |
-| `appName`    | `string`  | Your app name.                              | Yes      |
-| `appVersion` | `string`  | Your app version.                           | Yes      |
-| `baseUrl`    | `boolean` | Endpoint to send tracking events.           | Yes      |
-| `deviceId`   | `boolean` | The device id of user.                      | Yes      |
-| `userId`     | `boolean` | The user id.                                | No       |
-| `debug`      | `boolean` | Enables/disables debug logs in the console. | No       |
+| Parameter     | Type      | Description                                 | Required |
+| ------------- | --------- | ------------------------------------------- | -------- |
+| `appName`     | `string`  | Your app name.                              | Yes      |
+| `appVersion`  | `string`  | Your app version.                           | Yes      |
+| `trackingUrl` | `string`  | The tracking service that provided by Tera. | Yes      |
+| `loyaltyUrl`  | `string`  | The loyalty service that provided by Tera.  | Yes      |
+| `token`       | `string`  | the user token.                             | Yes      |
+| `debug`       | `boolean` | Enables/disables debug logs in the console. | No       |
 
 #### Example
 
 ```javascript
 OneLoyaltyTrackingWebSDK.init({
-  appName: "Game Basketball",
-  appVersion: "2.3.1",
-  baseUrl: "https://${YOUR_TRACKING_API}",
-  deviceId: "27bf3752212cf819",
-  userId: "176f28ac-e003-4436-9633-89450944d490",
+  appName: "YOUR_APP_NAME",
+  appVersion: "YOUR_APP_VERSION",
+  trackingUrl: "https://oneloyalty-tracking-data-api.dev.terasvc.com",
+  loyaltyUrl: "https://loyalty-service-api.dev.terasvc.com",
+  token: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.xxx",
 });
 ```
 

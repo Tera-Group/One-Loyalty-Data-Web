@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>OneLoyalty Tracking SDK Example</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OneLoyalty Tracking SDK Example</title>
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    </head>
-    <body>
-        <h1>OneLoyalty Tracking SDK Example</h1>
-        <button id="trackButton">Click me to track event</button>
-        <script src="oneloyalty-tracking-web-sdk-1.0.0.js"></script>
-        <script>
-            $(document).ready(function () {
-                OneLoyaltyTrackingWebSDK.init({
-                    appName: 'Game vip pro',
-                    appVersion: '2.3.1',
-                    baseUrl: 'https://oneloyalty-tracking-data-api.dev.terasvc.com',
-                    deviceId: 'user-devide-id',
-                    debug: true
-                })
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h1>OneLoyalty Tracking SDK Example</h1>
+    <button id="trackButton">Click me to track event</button>
+    <script src="oneloyalty-tracking-web-sdk-1.1.0.js"></script>
+    <script>
+      $(document).ready(function () {
+        OneLoyaltyTrackingWebSDK.init({
+          appName: "Game vip pro",
+          appVersion: "2.3.1",
+          trackingUrl: "https://oneloyalty-tracking-data-api.dev.terasvc.com",
+          loyaltyUrl: "https://loyalty-service-api.dev.terasvc.com",
+          token:
+            "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJIaVBsYXkiLCJzdWIiOiJPQU1MTVRIIiwiaWF0IjoxNzMyODU0Mjc1LCJleHAiOjE3NDA3NjIwMDB9.Qd2M4m5W_52VGlWEXgg-dzRgTuEfL8oo2-xvIjtkYHIg19pg5k0OAAZP4Ii23W409u_tCM_08tmV6L133QBIdUocyGuWtDG-VxvKWJO9n2JP9mrfxPumyAyvpTk8vmy9tNk2wPZfdxXb0-_urITwCEmAciJyWUKZ3utL8SqihEoklOapFedwuqq9z7Rl1EPwYB8BQ7gF8r6fOPM1fklhKvGOqiGNBr9zxwqfMSWb0lhENYs8i26sg5spRMgea0M9y50BHldlJJ5GHOKS-TigzVBTwJtActS4ZF0lw9cLG-LZV-Q0-vf8CBgIr9IJcsTff1DeGhQEeVwgSy3NDXvBqg",
+          debug: true,
+        });
 
-                $('#trackButton').on('click', function () {
-                    OneLoyaltyTrackingWebSDK.trackEvent('button_click', { button_id: 'trackButton' })
-                })
-            })
-        </script>
-    </body>
+        $("#trackButton").on("click", function () {
+          OneLoyaltyTrackingWebSDK.trackEvent("button_click", {
+            button_id: "trackButton",
+          });
+        });
+      });
+    </script>
+  </body>
 </html>
